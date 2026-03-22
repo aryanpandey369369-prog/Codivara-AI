@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content">
 <meta name="google-site-verification" content="Y1YzSV1Z9Zhcwrw-6-kwZ8KSwh3E2jj9Urbl9jAE07g">
- <title>Codivara AI</title>
+<title>Codivara AI</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
@@ -48,52 +48,53 @@
 
   #hero {
     display:flex; flex-direction:column; align-items:center;
-    padding:36px 24px 16px; text-align:center; position:relative;
+    padding:44px 24px 20px; text-align:center; position:relative;
   }
   #hero::before {
     content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
-    width:300px; height:220px;
-    background:radial-gradient(ellipse,rgba(0,212,255,0.08) 0%,rgba(139,92,246,0.06) 50%,transparent 70%);
+    width:340px; height:260px;
+    background:radial-gradient(ellipse,rgba(0,212,255,0.12) 0%,rgba(139,92,246,0.09) 50%,transparent 70%);
     pointer-events:none;
   }
   #hero img {
-    width:90px; height:90px; border-radius:20px; position:relative; z-index:1;
-    filter:drop-shadow(0 0 24px rgba(0,212,255,0.3));
+    width:96px; height:96px; border-radius:24px; position:relative; z-index:1;
+    filter:drop-shadow(0 0 28px rgba(0,212,255,0.35));
     animation:float 4s ease-in-out infinite;
   }
-  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
   #hero-title {
-    font-family:'Syne',sans-serif; font-weight:800; font-size:28px; margin-top:14px;
+    font-family:'Syne',sans-serif; font-weight:800; font-size:26px; margin-top:14px;
     background:linear-gradient(135deg,#00d4ff,#a78bfa,#8b5cf6);
     -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-    position:relative; z-index:1;
+    position:relative; z-index:1; letter-spacing:-0.3px;
   }
-  #hero-sub { color:var(--muted); font-size:12.5px; margin-top:6px; line-height:1.55; }
+  #hero-sub { color:var(--muted); font-size:13px; margin-top:8px; line-height:1.6; max-width:260px; }
 
   /* CHAT BUTTON */
   #chat-btn {
-    display:block; cursor:pointer; margin:18px 18px 0;
-    background:linear-gradient(135deg,rgba(0,212,255,0.1),rgba(139,92,246,0.16));
-    border:1px solid rgba(139,92,246,0.3); border-radius:18px;
-    padding:14px 16px; transition:transform 0.15s, box-shadow 0.15s;
+    display:block; cursor:pointer; margin:22px 18px 0;
+    background:linear-gradient(135deg,rgba(0,212,255,0.15),rgba(139,92,246,0.22));
+    border:1.5px solid rgba(139,92,246,0.45); border-radius:20px;
+    padding:16px 14px; transition:transform 0.15s, box-shadow 0.15s;
+    box-shadow:0 4px 24px rgba(139,92,246,0.2);
   }
-  #chat-btn:active { transform:scale(0.97); box-shadow:0 0 24px rgba(139,92,246,0.3); }
-  .btn-row { display:flex; align-items:center; gap:12px; }
+  #chat-btn:active { transform:scale(0.97); box-shadow:0 0 32px rgba(139,92,246,0.4); }
+  .btn-row { display:flex; align-items:center; gap:10px; }
   .btn-icon {
-    width:44px; height:44px; border-radius:12px; flex-shrink:0;
+    width:46px; height:46px; border-radius:14px; flex-shrink:0;
     background:linear-gradient(135deg,#00d4ff,#8b5cf6);
     display:flex; align-items:center; justify-content:center;
-    box-shadow:0 4px 14px rgba(139,92,246,0.4);
+    box-shadow:0 4px 16px rgba(139,92,246,0.4);
   }
-  .btn-icon svg { width:20px; height:20px; }
-  .btn-txt h3 { font-family:'Syne',sans-serif; font-size:15px; font-weight:700; color:var(--text); }
-  .btn-txt p { color:var(--muted); font-size:12px; margin-top:2px; }
-  .btn-arrow {
-    margin-left:auto; width:28px; height:28px; border-radius:50%; flex-shrink:0;
-    background:var(--surface2); border:1px solid var(--border);
-    display:flex; align-items:center; justify-content:center;
+  .btn-icon svg { width:22px; height:22px; }
+  .btn-txt { flex:1; min-width:0; }
+  .btn-txt h3 { font-family:'Syne',sans-serif; font-size:14px; font-weight:800; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .btn-txt p { color:var(--muted); font-size:11px; margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .btn-badge {
+    flex-shrink:0; background:linear-gradient(135deg,#00d4ff,#8b5cf6);
+    color:white; font-size:10px; font-weight:700; padding:4px 10px;
+    border-radius:20px; letter-spacing:0.3px; font-family:'Syne',sans-serif;
   }
-  .btn-arrow svg { width:13px; height:13px; color:var(--cyan); }
 
   /* SECTION LABEL */
   .sec-label {
@@ -141,8 +142,7 @@
   #back-btn { width:34px; height:34px; border-radius:50%; background:var(--surface2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--text); flex-shrink:0; }
   #back-btn svg { width:15px; height:15px; }
   #app-name { font-family:'Syne',sans-serif; font-weight:800; font-size:19px; background:linear-gradient(135deg,#00d4ff,#a78bfa,#8b5cf6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.3px; }
-  #new-chat-btn { background:var(--surface2); border:1px solid var(--border); color:var(--text); padding:7px 13px; border-radius:20px; font-size:13px; font-family:'DM Sans',sans-serif; font-weight:500; cursor:pointer; display:flex; align-items:center; gap:6px; }
-  #new-chat-btn svg { width:13px; height:13px; }
+  #new-chat-btn { display:none; }
   #chat-area { flex:1; overflow-y:auto; padding:20px 16px 12px; display:flex; flex-direction:column; gap:20px; scroll-behavior:smooth; }
   #chat-area::-webkit-scrollbar { width:3px; }
   #chat-area::-webkit-scrollbar-thumb { background:var(--border); border-radius:10px; }
@@ -178,6 +178,10 @@
   #send-btn:active { transform:scale(0.92); }
   #send-btn svg { width:17px; height:17px; }
   #file-input,#img-input,#cam-input { display:none; }
+  #img-preview-bar { display:flex; flex-wrap:wrap; gap:8px; padding:8px 4px 4px; }
+  .img-preview-thumb { position:relative; width:64px; height:64px; border-radius:10px; overflow:hidden; border:1.5px solid rgba(139,92,246,0.5); flex-shrink:0; }
+  .img-preview-thumb img { width:100%; height:100%; object-fit:cover; }
+  .img-preview-remove { position:absolute; top:2px; right:2px; background:rgba(0,0,0,0.7); color:white; border:none; border-radius:50%; width:18px; height:18px; font-size:11px; cursor:pointer; display:flex; align-items:center; justify-content:center; line-height:1; }
   @keyframes bounce { 0%,80%,100%{transform:translateY(0);opacity:0.5} 40%{transform:translateY(-6px);opacity:1} }
   @keyframes slideIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
 
@@ -221,14 +225,10 @@
           </svg>
         </div>
         <div class="btn-txt">
-          <h3>Chat with Codivara AI</h3>
-          <p>Tap to start chatting with AI</p>
+          <h3>Start Chatting Now →</h3>
+          <p>Ask anything — code, ideas, answers</p>
         </div>
-        <div class="btn-arrow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </div>
+        <div class="btn-badge">FREE</div>
       </div>
     </div>
 
@@ -236,24 +236,24 @@
 
     <div id="features">
       <div class="fcard">
-        <div class="ficon">💬</div>
-        <div class="ftitle">AI Chat Assistant</div>
-        <div class="fdesc">Ask anything, get instant smart answers — powered by Codivara AI</div>
+        <div class="ficon">🤖</div>
+        <div class="ftitle">Smart AI Chat</div>
+        <div class="fdesc">Get instant answers to any question, powered by advanced AI</div>
       </div>
       <div class="fcard">
         <div class="ficon">⚡</div>
         <div class="ftitle">Code Generator</div>
-        <div class="fdesc">HTML, CSS, JS, Python — generate in one click</div>
+        <div class="fdesc">HTML, CSS, JS, Python — generate clean code instantly</div>
       </div>
       <div class="fcard">
-        <div class="ficon">📁</div>
-        <div class="ftitle">File & Image</div>
-        <div class="fdesc">Upload files and images for AI to analyze</div>
+        <div class="ficon">🖼️</div>
+        <div class="ftitle">Image & File AI</div>
+        <div class="fdesc">Upload images or files and let AI analyze them for you</div>
       </div>
       <div class="fcard">
         <div class="ficon">🚀</div>
-        <div class="ftitle">Always Learning</div>
-        <div class="fdesc">Smarter every day — built to understand you better over time</div>
+        <div class="ftitle">Always Fast</div>
+        <div class="fdesc">Lightning fast responses — no waiting, just results</div>
       </div>
     </div>
 
@@ -316,6 +316,7 @@
           </div>Camera
         </label>
       </div>
+      <div id="img-preview-bar"></div>
       <div id="input-row">
         <button id="plus-btn" onclick="toggleAttach()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
@@ -422,12 +423,36 @@ function toggleAttach() { attachPopup.classList.toggle('show'); }
 function autoResize(el) { el.style.height='auto'; el.style.height=Math.min(el.scrollHeight,120)+'px'; }
 function handleKey(e) { if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMessage();} }
 
+const previewBar = document.getElementById('img-preview-bar');
+
 function handleFile(event,type) {
   const file=event.target.files[0]; if(!file) return;
   attachPopup.classList.remove('show');
-  if(type==='image'||type==='camera'){const r=new FileReader();r.onload=ev=>pendingAttachments.push({type:'image',name:file.name,dataUrl:ev.target.result});r.readAsDataURL(file);}
-  else{pendingAttachments.push({type:'file',name:file.name});}
+  if(type==='image'||type==='camera'){
+    const r=new FileReader();
+    r.onload=ev=>{
+      const att={type:'image',name:file.name,dataUrl:ev.target.result};
+      pendingAttachments.push(att);
+      renderPreviewBar();
+    };
+    r.readAsDataURL(file);
+  } else {
+    pendingAttachments.push({type:'file',name:file.name});
+  }
   event.target.value='';
+}
+
+function renderPreviewBar() {
+  previewBar.innerHTML='';
+  pendingAttachments.forEach((a,i)=>{
+    if(a.type==='image'){
+      const wrap=document.createElement('div'); wrap.className='img-preview-thumb';
+      const img=document.createElement('img'); img.src=a.dataUrl;
+      const btn=document.createElement('button'); btn.className='img-preview-remove'; btn.textContent='✕';
+      btn.onclick=()=>{ pendingAttachments.splice(i,1); renderPreviewBar(); };
+      wrap.appendChild(img); wrap.appendChild(btn); previewBar.appendChild(wrap);
+    }
+  });
 }
 
 function newChat() {
@@ -476,6 +501,7 @@ async function sendMessage() {
   const text=inputBox.value.trim(); const atts=[...pendingAttachments]; pendingAttachments=[];
   if(!text&&!atts.length) return;
   inputBox.value=''; inputBox.style.height='auto'; attachPopup.classList.remove('show');
+  previewBar.innerHTML='';
   addMessage('user',text,atts);
 
   // Build Gemini-format parts for current message
